@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+		body{
+			font-family:sans-serif;
+		}
+		.container{
+			width:330px;
+			height:395px;
+			border:1px solid blue;
+			margin-left:37%;
+		}
+		.result{
+			height:50px;
+			border:1px solid blue;
+			margin:2%;
+			font-size:38px;
+		}
+		.numbers{
+			width:315px;
+			height:280px;
+			border:1px solid blue;
+			margin:2%;
+		}
+		button{
+			width:60px;
+			height:50px;
+			margin:2%;
+			color:blue;
+		}
+	</style>
+	</head>
+	<body>
+		<h1 style="text-align:center;">Simple Calculator</h1>
+		<div class="container">
+			<div class="result">
+				<label id="total" style="margin-top:-5%;"></label>
+			</div><br><br>
+			<div class="numbers">
+				<button onclick="calculate('1')">1</button>
+				<button onclick="calculate('2')">2</button>
+				<button onclick="calculate('3')">3</button>
+				<button onclick="calculate('+')">+</button><br>
+				<button onclick="calculate('4')">4</button>
+				<button onclick="calculate('5')">5</button>
+				<button onclick="calculate('6')">6</button>
+				<button onclick="calculate('-')">-</button><br>
+				<button onclick="calculate('7')">7</button>
+				<button onclick="calculate('8')">8</button>
+				<button onclick="calculate('9')">9</button>
+				<button onclick="calculate('*')">*</button><br>
+				<button onclick="equal('=')">=</button>
+				<button onclick="calculate('0')">0</button>
+				<button onclick="calculate('c')">CE</button>
+				<button onclick="calculate('/')">/</button>
+			</div>
+			<div id="error"
+				style="display:none;color:red;margin-top:-10%;margin-left:20%;"></div>
+		</div>
+		<footer>
+			<h5 style="margin-left:42%;">Made with <span style="color:red;">&hearts;</span>
+				by Sujith D</h5>
+		</footer>
+		<script>
+		var expression = "";
+		function calculate(value){
+			if(value === 'c'){
+				document.getElementById('total').innerHTML = "";
+				expression = "";
+				document.getElementById('error').style.display = 'none';
+			}else{
+				expression+=value;
+				document.getElementById('total').innerHTML = expression;
+			}
+		}
+		function equal(){
+			try{
+				var result = eval(expression);
+				if(isNaN(result) || !isFinite(result)){
+					document.getElementById('error').innerHTML = "cannot divide by zero";
+					document.getElementById('error').style.display = 'block';
+				}else{
+					document.getElementById('total').innerHTML = result;
+					expression = result;
+				}
+			}catch(err){
+				document.getElementById('error').innerHTML = "Enter a valid expression";
+				document.getElementById('error').style.display = 'block';
+			}
+		}
+	</script>
+	</body>
+</html>
