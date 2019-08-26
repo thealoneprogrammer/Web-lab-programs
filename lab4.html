@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+        .container{
+                width:350px;
+                height:220px;
+                border:1px solid blue;
+                margin-left:37%;
+            }
+            .element{
+                margin-left: 25%;
+                margin-top: 8%;
+            }
+            span{
+                color: green;
+                margin-left: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align:center;">Vowel and Reverse of a number</h1>
+        <div class="container">
+            <input type="text" placeholder="Enter a String" id="string"
+                class="element" /><br>
+            <input type="text" placeholder="Enter a Number" id="number"
+                class="element" /><br>
+            <button type="button" id="submit" onclick="getData()"
+                style="margin-left: 40%;margin-top:
+                8%;color:blue;"> Submit </button><br><br>
+            <span id="stringResult"></span><br>
+            <span id="numberResult"></span>
+        </div><br>
+        <footer>
+            <b style="margin-left: 42%;">Made with <i style="color:red;">&hearts;</i>
+                by Sujith D</b>
+        </footer>
+        <script>
+            function getData(){
+                var string = document.getElementById('string').value;
+                var number = document.getElementById('number').value;
+
+                if(string == "" || number == ""){
+                    alert("Enter all the fields");
+                    return;
+                }
+                var vowel = processString(string);
+                document.getElementById('stringResult').innerHTML = vowel;
+                var reversedNumber = processNumber(number);
+                document.getElementById('numberResult').innerHTML = reversedNumber;
+            }
+            function processString(string){
+                string = string.toUpperCase();
+                for(var i = 0; i < string.length; i++){
+                    ch = string.charAt(i);
+                    if(ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
+                        break;
+                }
+                if( i < string.length )
+                    return "Left most vowel " + ch +" found at position " +(i+1)
+                else
+                    return "No Vowel Found"
+            }
+            function processNumber(number){
+                return "Reversed Number = " + String(number).split("").reverse().join("");
+            }
+        </script>
+    </body>
+</html>
