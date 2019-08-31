@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-stylesheet type="text/css" href="style.css"?> 
+<student> 
+	<heading>Student Details</heading> 
+	<detail>
+		<title>Subramanya C</title>
+		<usn><p>USN:</p>   4SF16CS157</usn>
+		<college><p>College:</p>   Sahyadri College of Engineering and Management</college>
+		<branch><p>Branch:</p>   Computer Science</branch>
+		<year><p>Year of Joining:</p>   2016</year>
+		<email><p>Email Id:</p>   raosubramanya@outlook.com</email>
+	
+	
+	</detail>
+	<detail>
+		<title>Sujith D</title>
+		<usn><p>USN:</p>   4SF16CS160</usn>
+		<college><p>College:</p>   Sahyadri College of Engineering and Management</college>
+		<branch><p>Branch:</p>   Computer Science</branch>
+		<year><p>Year of Joining:</p>   2016</year>
+		<email><p>Email Id:</p>   sujithsuji1098@gmail.com</email>
+	
+	</detail>
+	
+	<detail>
+		<title>Rithesh R</title>
+		<usn><p>USN:</p>   4SF16CS129</usn>
+		<college><p>College:</p>   Sahyadri College of Engineering and Management</college>
+		<branch><p>Branch:</p>   Computer Science</branch>
+		<year><p>Year of Joining:</p>   2016</year>
+		<email><p>Email Id:</p>   rithesh199.rr@gmail.com</email>
+	
+	</detail>
+	
+</student> 
+

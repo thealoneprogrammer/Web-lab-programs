@@ -1,0 +1,111 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body{
+                font-family: sans-serif;
+            }
+            .container{
+           
+                text-align:center;
+            }
+            button{
+                color: blue;
+            }
+            #grow{
+            
+            	font-size:5px;
+            
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align:center;">Text Animation</h1><br><br><br><br><br>
+        <div class="container">
+            <!--<input type="text" placeholder="Enter the number" id="to" onkeyup="generate()"/>-->
+            <button class="start" id="done" onclick="start()">Start</button>
+        </div><br><br><br><br><br>
+        
+        
+        <h2 id = "grow" style="text-align:center; color:red"></h2><br><br><br><br><br>
+      	
+	<footer>
+            <b style="margin-left: 42%;">Made with <span style="color:red;">&hearts;</span> on <span class= "fa fa-coffee" style="color:red;"></span></b>
+        </footer>
+
+        <script>
+        
+              function start() { 
+              
+		      var var1 = setInterval(inTimer, 100);
+		      var size = 5;
+		      var flag = false;
+		      var ids = document.getElementById("grow");
+		      var btn = document.getElementById("done");
+		      
+		      if(!flag){
+		      	
+		      	btn.innerHTML = "Stop";
+		      }else{
+		      
+		      	btn.innerHTML = "Start";
+		      
+		      }
+		      
+		      function inTimer() {
+		      	      btn.innerHTML = "Stop";
+			      ids.innerHTML = 'TEXT GROWING';
+			      ids.setAttribute('style', "font-size: " + size + "px; color: red;text-align:center");
+			      size += 5;
+			      if(size >= 50 ){
+				      clearInterval(var1);
+				      var2 = setInterval(deTimer, 100);
+			      
+			      }
+		      }
+		      function deTimer() {
+			      size -= 5;
+			      ids.innerHTML = 'TEXT SHRINKING';
+			      ids.setAttribute('style', "font-size: " + size + "px; color: blue;text-align:center");
+			      if(size == 5 ){
+			      	   btn.innerHTML = "Start";
+			      	   clearInterval(var2);
+			      }
+              		}
+             
+           // var flag = false;
+           // var el  = document.querySelector("h2");
+           // clearInterval();
+              //setInterval(
+              //function(){
+	      //var style = window.getComputedStyle(el,null).getPropertyValue('font-size');
+	      //var fontSize = parseFloat(style); 
+		//if(fontSize != 50 && !flag){
+			
+		//	el.style.fontSize = (fontSize + 1) + 'px';	
+		//}else{
+	//		flag =true;
+	//		el.innerHTML = "Text-Shrinking";
+	//		if(fontSize!=5){
+	//		el.style.fontSize = (fontSize - 1) + 'px';
+	//			el.style.color = "blue";
+	//		
+	//		}else{
+	//		
+	//			falg =false;
+	//		}
+		
+	//	}
+	//	console.log(el.style.fontSize);
+          //    },
+            // 100
+            //  ); 
+          }
+            
+            
+            
+    
+        </script>
+    </body>
+</html>
