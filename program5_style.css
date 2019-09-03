@@ -1,0 +1,29 @@
+books { 
+	color: white; 
+	background-color : gray; 
+	width: 100%; 
+} 
+heading { 
+	color: green; 
+	font-size : 40px; 
+	background-color : rgb(255,240,255,1); 
+	display:block;
+} 
+ usn, college, branch, year,email { 
+	display : block; 
+	margin-left: 10%;
+} 
+title { 
+	font-size : 20px; 
+	font-weight : italic; 
+	padding: 10px;
+	display:block;
+	color: green;
+} 
+p{
+
+	color:red;
+
+}
+
+
