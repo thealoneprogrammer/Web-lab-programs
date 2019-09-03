@@ -40,27 +40,38 @@
                 var string = document.getElementById('string').value;
                 var number = document.getElementById('number').value;
 
-                if(string == "" || number == ""){
+                if(string == "" || number == "" ){
                     alert("Enter all the fields");
                     return;
                 }
+
+                if(isNaN(number)){
+                    alert("Enter a valid number");
+                    return;
+                }
+
                 var vowel = processString(string);
                 document.getElementById('stringResult').innerHTML = vowel;
+
                 var reversedNumber = processNumber(number);
                 document.getElementById('numberResult').innerHTML = reversedNumber;
             }
+
             function processString(string){
                 string = string.toUpperCase();
+
                 for(var i = 0; i < string.length; i++){
                     ch = string.charAt(i);
                     if(ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
                         break;
                 }
+
                 if( i < string.length )
                     return "Left most vowel " + ch +" found at position " +(i+1)
                 else
                     return "No Vowel Found"
             }
+            
             function processNumber(number){
                 return "Reversed Number = " + String(number).split("").reverse().join("");
             }
