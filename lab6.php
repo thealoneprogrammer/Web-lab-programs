@@ -6,6 +6,7 @@ if (!file_exists($fname)) {
     fwrite($f, "0");
     fclose($f);
 }
+//Aded Comment
 $f = fopen($fname, "r");
 $hits = fscanf($f, "%d");
 fclose($f);
